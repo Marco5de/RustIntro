@@ -8,7 +8,7 @@ mod Game;
 use std::rc::Rc;
 use std::cell::RefCell;
 use TutorialDatatypes::{TutorialPoint, TutorialTupleStruct, TutorialEnum, TutorialEnumExpression, TutorialNode};
-use Game::read_input;
+use Game::{Field, Game2048Interface};
 
 
 fn get_hello_world(_x: &'static str) -> &'static str {
@@ -209,8 +209,9 @@ fn tutorial_main() -> () {
 fn main() {
     tutorial_main();
 
-    let op = read_input();
 
+    let mut s = Field::new();
+    s.game_loop();
 
 
 }
