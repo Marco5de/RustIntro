@@ -194,14 +194,8 @@ impl Game2048 for Field {
                     continue;
                 }
                 // if fields have same value, add them
-                if self.field[idx] == self.field[offset_idx] {
+                if self.field[idx] == self.field[offset_idx] || self.field[idx] == 0{
                     self.field[idx] += self.field[offset_idx];
-                    self.field[offset_idx] = 0;
-                    static_field = false;
-                }
-                // if field is empty, shift left
-                else if self.field[idx] == 0 {
-                    self.field[idx] = self.field[offset_idx];
                     self.field[offset_idx] = 0;
                     static_field = false;
                 }
